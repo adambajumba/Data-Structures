@@ -250,32 +250,31 @@ public class BetterArray<E> {
 
 	public static void main(String[] args) {
 		
-		System.out.println("-------------------------------------------------------------");
-        System.out.println("----------------  Better Array Test Case  -------------------");
-        System.out.println("-------------------------------------------------------------");
-
+		System.out.println("This is an improved Array");
+		
         BetterArray<Integer> betterArray = new BetterArray<>();
-        betterArray.append(1);
-        betterArray.append(2);
-        betterArray.append(3);
+        betterArray.append(15);
+        betterArray.append(27);
+        betterArray.append(39);
+        betterArray.append(51);
 
-        betterArray.append(4, 5, 6, 7);
+        betterArray.append(1, 2, 3, 4, 5, 6);
 
-        betterArray.append(8, 9, 10);
+        betterArray.append(10, 11, 12, 13);
 
         betterArray.shift(100);
 
-        betterArray.insert(4, 200);
+        betterArray.insert(9, 150);
 
-        System.out.println("Values in array :=> " + betterArray.toString());
+        System.out.println("The Values in the array :=> " + betterArray.toString());
 
-        System.out.println("\nIndex of 200 :=> " + betterArray.index(200));
+        System.out.println("\nThe ndex of 150 :=> " + betterArray.index(150));
 
-        betterArray.remove(4);
+        betterArray.remove(9);
 
         System.out.println("\nRemove value at index 4 :=> " + betterArray.toString());
 
-        betterArray.removeElement(10);
+        betterArray.removeElement(100);
 
         System.out.println("\nRemove element 10 :=> " + betterArray.toString());
 		// TODO Auto-generated method stub

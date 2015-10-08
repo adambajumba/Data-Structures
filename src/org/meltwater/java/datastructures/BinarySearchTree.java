@@ -2,22 +2,18 @@ package org.meltwater.java.datastructures;
 
 public class BinarySearchTree<E extends Comparable<? super E>> {
 
-    // data members
+   
     private int size;
     private BSTNode<E> root;
 
-    /*
-      Default Constructor
-     */
     public BinarySearchTree () {
         this.root = null;
         size = 0;
     }
 
     /*
-      Add an element to it's proper place
-      @param value:
-            the new value to be added to the tree
+     * Add an element to it's proper place
+     * @param value: the new value to be added to the tree
      */
     public void add (E value){
         if (value == null)
@@ -26,11 +22,9 @@ public class BinarySearchTree<E extends Comparable<? super E>> {
     }
 
     /*
-      Recursive helper for add method
-      @param node:
-            represents the next node to evaluate
-      @param value:
-            value to add
+     * Recursive helper for add method
+     * @param node represents the next node to evaluate
+      @param value:value to add
      */
     private BSTNode<E> recursiveAdd(BSTNode<E> node, E value) {
         if (node == null) {
@@ -49,9 +43,8 @@ public class BinarySearchTree<E extends Comparable<? super E>> {
     }
 
     /*
-      Remove an element from the tree if present
-      @param value:
-            value to remove from tree if present
+     *Remove an element from the tree if the element is present
+     *@param value: value to remove from tree if present
      */
     public void remove (E value) {
         if (value == null)
@@ -60,11 +53,9 @@ public class BinarySearchTree<E extends Comparable<? super E>> {
     }
 
     /*
-      Recursive helper for remove method
-      @param node:
-            represents the next node to evaluate
-      @param value:
-            value to remove
+     *Recursive helper for remove method
+     * @param node: represents the next node to evaluate
+     *@param value: value to remove
      */
     private BSTNode<E> recursiveRemove(BSTNode<E> node, E value) {
         if (node == null)
@@ -83,7 +74,7 @@ public class BinarySearchTree<E extends Comparable<? super E>> {
             else if (node.getLeft() == null)
                 node = node.getRight();
             else {
-                node.setValue(max(node.getLeft()));
+                node.setValue(largest(node.getLeft()));
                 node.setLeft(recursiveRemove(node.getLeft(), node.getValue()));
                 size++;
             }
@@ -92,11 +83,10 @@ public class BinarySearchTree<E extends Comparable<? super E>> {
     }
 
     /*
-     getMax returns the max value searching downwards from current node
-     @param temp:
-            search for max below temp ndoe
+     *getMax returns the largest value searching downwards from current node
+     *@param temp:search for largest below temp node
      */
-    private E max (BSTNode<E> temp) {
+    private E largest (BSTNode<E> temp) {
         while (temp.getRight() != null){
             temp = temp.getRight();
         }
@@ -104,9 +94,8 @@ public class BinarySearchTree<E extends Comparable<? super E>> {
     }
 
     /*
-     isPresent check if node is present
-     @param vlaue:
-            the value to check if present in tree or not
+     *isPresent check if node is present
+     *@param vlaue: the value to check if present in tree or not
      */
     public boolean isPresent(E value) {
         if (value == null)
@@ -154,22 +143,18 @@ public class BinarySearchTree<E extends Comparable<? super E>> {
   	}
 
   	/*
-  	 One-arg Constructor with data value
-  	   @param data:
-  	   		initial value of objects myData field
+  	 *One-arg Constructor with data value
+  	 *@param data: initial value of objects myData field
   	 */
   	public BSTNode (E data){
   		this(null, null, data);
   	}
 
   	/*
-  	 multiple-arg Constructor with data value and child nodes
-  	   @param leftNode:
-  	   		left child node
-  	   @param rightNode:
-  	   		right child node
-  	   @param data:
-  	   		initial value of objects myData field
+  	 *multiple-arg Constructor with data value and child nodes
+  	 *@param leftNode: left child node
+  	 *@param rightNode: right child node
+  	 *@param data:initial value of objects myData field
   	 */
   	public BSTNode (BSTNode<E> leftNode, BSTNode<E> rightNode, E data) {
   		this.myData = data;
@@ -185,32 +170,30 @@ public class BinarySearchTree<E extends Comparable<? super E>> {
      }
 
     /*
-      Set the data of the node
-      @param newData:
-        the new value of the node
+     *Set the data of the node
+     * @param newData: the new value of the node
      */
     public void setValue(E data) {
         this.myData = data;
     }
 
     /*
-      return the left child node
+     * return the left child node
      */
     public BSTNode<E> getLeft () {
         return this.myLeft;
     }
 
     /*
-      return the right child node
+     *return the right child node
      */
     public BSTNode<E> getRight () {
         return this.myRight;
     }
     
     /*
-      set the right child node
-      @param newRight:
-            new myRight node
+     *set the right child node
+     *@param newRight:  new myRight node
      */
     public void setRight (BSTNode<E> newRight) {
         this.myRight = newRight;
@@ -224,11 +207,11 @@ public class BinarySearchTree<E extends Comparable<? super E>> {
     public void setLeft (BSTNode<E> newLeft) {
         this.myLeft = newLeft;
     }
-  } // end class BSTNode
+  } 
   
  
 
 }
-// end outer class BST-Java
+
 
  
