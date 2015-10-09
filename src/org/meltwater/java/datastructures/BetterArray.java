@@ -1,7 +1,5 @@
 package org.meltwater.java.datastructures;
 
-import java.util.Collections;
-
 public class BetterArray<E> {
 	
 	 private E[] array;
@@ -219,11 +217,6 @@ public class BetterArray<E> {
         array = (E[]) new Object[0];
     }
     
-    public void reverse(){
-    	array = newArray;
-     Collections.reverseOrder();
-    	
-    }
 
     /**
      * Creates a String representation of elements in the ArrayList
@@ -243,43 +236,23 @@ public class BetterArray<E> {
 
         return elementString;
     }
-
-
-
-
-
-	public static void main(String[] args) {
+    
+    /**
+     * Reverses the elements in the BetterArray
+     */
+    public void reverse(){
+		if(size() <= 1) return;
+		int start = 0;
+		int end = size()-1;
 		
-		System.out.println("This is an improved Array");
-		
-        BetterArray<Integer> betterArray = new BetterArray<>();
-        betterArray.append(15);
-        betterArray.append(27);
-        betterArray.append(39);
-        betterArray.append(51);
-
-        betterArray.append(1, 2, 3, 4, 5, 6);
-
-        betterArray.append(10, 11, 12, 13);
-
-        betterArray.shift(100);
-
-        betterArray.insert(9, 150);
-
-        System.out.println("The Values in the array :=> " + betterArray.toString());
-
-        System.out.println("\nThe ndex of 150 :=> " + betterArray.index(150));
-
-        betterArray.remove(9);
-
-        System.out.println("\nRemove value at index 4 :=> " + betterArray.toString());
-
-        betterArray.removeElement(100);
-
-        System.out.println("\nRemove element 10 :=> " + betterArray.toString());
-		// TODO Auto-generated method stub
-
-	}
+		while (start < end) {
+			E temp = array[start];
+			array[start] = array[end];
+			array[end] = temp;
+			
+			start++; end--;
+		}
+    }
 
 }
 
