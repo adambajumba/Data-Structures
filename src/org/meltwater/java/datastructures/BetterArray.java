@@ -1,5 +1,12 @@
 package org.meltwater.java.datastructures;
 
+/**
+ * takes 0(n)
+ * @author Izzoe
+ *
+ * @param <E>
+ */
+
 public class BetterArray<E> {
 	
 	 private E[] array;
@@ -16,6 +23,7 @@ public class BetterArray<E> {
      * Gets the size of the ArrayList
      *
      * @return Returns the size of the ArrayList
+     * takes0(n)
      */
     public int size() {
         return array.length;
